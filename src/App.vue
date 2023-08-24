@@ -40,7 +40,7 @@ ul {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   color: #29292e;
 }
 
@@ -66,14 +66,13 @@ img {
 
 .btn {
   display: block;
-  padding: 16px 24px;
+  padding: 12px 24px;
   border-radius: 4px;
   background: #701cda;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
   text-align: center;
   color: #fff;
-  box-shadow: 0 4px 8px rgba(161, 17, 147, 0.2);
+  box-shadow: 0 4px 8px rgba(156, 93, 150, 0.2);
   transition: all 0.3s;
   border: none;
   cursor: pointer;
@@ -92,7 +91,6 @@ textarea {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
   font-size: 1rem;
-  font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 15px;
 }
 

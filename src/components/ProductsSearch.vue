@@ -29,7 +29,7 @@ export default {
 <style scoped>
 form {
   max-width: 600px;
-  margin: 60px auto 0 auto;
+  margin: 40px auto 0 auto;
   position: relative;
 }
 
@@ -43,12 +43,11 @@ form {
 #search:hover {
   outline: none;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
 }
 
 #lupa {
   width: 62px;
-  height: 62px;
+  height: 58px;
   background: url("../assets/search.svg") no-repeat center center;
   border: none;
   cursor: pointer;
@@ -56,9 +55,11 @@ form {
   top: 0px;
   right: 0px;
   box-shadow: none;
+  border-left: 1px solid #ededed;
+  border-radius: 0px;
 }
 
-@media (max-width: 762px) {
+@media (max-width: 780px) {
   form {
     max-width: 400px;
   }

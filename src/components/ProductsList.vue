@@ -9,7 +9,7 @@
             :alt="product.fotos[0].titulo"
           />
           <h2 class="product-name">{{ product.nome }}</h2>
-          <p class="product-price">{{ product.preco }}</p>
+          <p class="product-price">R$ {{ product.preco }}</p>
           <p class="product-desc">{{ product.descricao }}</p>
         </router-link>
       </div>
@@ -58,14 +58,13 @@ export default {
 <style scoped>
 .products-container {
   max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 60px;
+  margin: 40px auto 0 auto;
   padding: 0 20px;
 }
 
 .products {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
@@ -104,7 +103,13 @@ export default {
   text-align: center;
 }
 
-@media (max-width: 762px) {
+@media (max-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
   }
