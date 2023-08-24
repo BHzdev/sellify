@@ -66,7 +66,7 @@ img {
 
 .btn {
   display: block;
-  padding: 16px 32px;
+  padding: 16px 24px;
   border-radius: 4px;
   background: #701cda;
   font-family: Helvetica, Arial, sans-serif;
