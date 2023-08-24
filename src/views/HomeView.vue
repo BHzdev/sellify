@@ -23,5 +23,7 @@ export default {
 h1 {
   font-size: 2rem;
   color: #833cdd;
+  margin-top: 40px;
+  text-align: center;
 }
 </style>
