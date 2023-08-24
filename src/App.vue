@@ -41,11 +41,11 @@ ul {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  color: #345;
+  color: #29292e;
 }
 
 a {
-  color: #345;
+  color: #0e0e11;
   text-decoration: none;
 }
 
