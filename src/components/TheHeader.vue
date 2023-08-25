@@ -2,7 +2,7 @@
   <header>
     <nav>
       <router-link to="/" class="logo">
-        <img src="@/assets/logo.svg" alt="" />
+        <img width="80px" height="80px" src="@/assets/logo.svg" alt="" />
       </router-link>
       <router-link class="btn" to="/login">Login / Criar Conta</router-link>
     </nav>
@@ -27,11 +27,6 @@ nav {
 
 .logo {
   padding: 8px 0;
-}
-
-.logo img {
-  width: 90px;
-  height: 50px;
 }
 
 @media (max-width: 360px) {
