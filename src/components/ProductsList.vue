@@ -21,6 +21,9 @@
     <div v-else-if="products && products.length === 0">
       <p class="no-results">Busca sem resultados. Tente buscar outro termo.</p>
     </div>
+    <div v-else>
+      <LoadingPage />
+    </div>
   </section>
 </template>
 
