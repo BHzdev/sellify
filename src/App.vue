@@ -102,4 +102,22 @@ textarea:focus {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   border-color: #701cda;
 }
+
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter {
+  transform: translate3d(0, -20px, 0);
+}
+
+.v-leave-to {
+  transform: translate3d(0, 20px, 0);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s;
+}
 </style>

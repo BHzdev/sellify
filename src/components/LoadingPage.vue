@@ -20,11 +20,11 @@ export default {
 
 .line {
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 14px;
   background-color: #833cdd;
-  margin-left: 16px;
+  margin-left: 14px;
 }
 
 .loading .line:nth-last-child(1) {
