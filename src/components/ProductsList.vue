@@ -10,7 +10,7 @@
               :alt="product.fotos[0].titulo"
             />
             <h2 class="product-name">{{ product.nome }}</h2>
-            <p class="product-price">R$ {{ product.preco }}</p>
+            <p class="product-price">{{ product.preco | priceNumber }}</p>
             <p class="product-desc">{{ product.descricao }}</p>
           </router-link>
         </div>
