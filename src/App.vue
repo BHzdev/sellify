@@ -2,7 +2,9 @@
   <div id="app">
     <TheHeader />
     <main id="main">
-      <router-view />
+      <transition mode="out-in">
+        <router-view />
+      </transition>
     </main>
     <TheFooter />
   </div>
@@ -69,6 +71,7 @@ img {
   padding: 12px 24px;
   border-radius: 4px;
   background: #701cda;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   text-align: center;
   color: #fff;
@@ -85,13 +88,12 @@ img {
 
 input,
 textarea {
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid white;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
   font-size: 1rem;
-  margin-bottom: 15px;
 }
 
 input:hover,
