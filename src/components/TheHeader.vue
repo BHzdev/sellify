@@ -4,7 +4,12 @@
       <router-link to="/" class="logo">
         <img width="80px" height="60px" src="@/assets/logo.svg" alt="" />
       </router-link>
-      <router-link class="btn" to="/login">Login / Criar Conta</router-link>
+      <router-link v-if="$store.state.login" class="btn" to="/usuario">{{
+        getUserName
+      }}</router-link>
+      <router-link v-else class="btn" to="/login"
+        >Login / Criar Conta</router-link
+      >
     </nav>
   </header>
 </template>
@@ -12,6 +17,11 @@
 <script>
 export default {
   name: "TheHeader",
+  computed: {
+    getUserName() {
+      return this.$store.state.usuario.nome.replace(/ .*/, "");
+    },
+  },
 };
 </script>
 
