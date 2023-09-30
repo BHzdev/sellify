@@ -38,6 +38,7 @@ nav {
 @media (max-width: 360px) {
   nav {
     justify-content: center;
+    gap: 16px;
   }
 }
 </style>
