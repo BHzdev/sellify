@@ -43,7 +43,7 @@ export default {
         "estado",
       ],
       base: "usuario",
-      mutation: "UPDATE_USUARIO",
+      mutation: "UPDATE_USER",
     }),
   },
   methods: {
