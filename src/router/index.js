@@ -4,6 +4,9 @@ import HomeView from "../views/HomeView.vue";
 import ProductView from "../views/ProductView.vue";
 import LoginView from "../views/LoginView.vue";
 import UserView from "../views/user/UserView";
+import UserProductsView from "../views/user/UserProductsView";
+import UserPurchasesView from "../views/user/UserPurchasesView";
+import UserSalesView from "../views/user/UserSalesView";
 
 Vue.use(VueRouter);
 
@@ -26,8 +29,24 @@ const routes = [
   },
   {
     path: "/usuario",
-    name: "usuario",
     component: UserView,
+    children: [
+      {
+        path: "",
+        name: "usuario",
+        component: UserProductsView,
+      },
+      {
+        path: "compras",
+        name: "compras",
+        component: UserPurchasesView,
+      },
+      {
+        path: "vendas",
+        name: "vendas",
+        component: UserSalesView,
+      },
+    ],
   },
 ];
 
