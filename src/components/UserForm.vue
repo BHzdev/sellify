@@ -1,11 +1,13 @@
 <template>
   <form>
-    <label for="nome">Nome</label>
-    <input id="nome" name="nome" type="text" v-model="nome" />
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" v-model="email" />
-    <label for="senha">Senha</label>
-    <input id="senha" name="senha" type="password" v-model="senha" />
+    <div class="user" v-if="showDataLogin">
+      <label for="nome">Nome</label>
+      <input id="nome" name="nome" type="text" v-model="nome" />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" v-model="email" />
+      <label for="senha">Senha</label>
+      <input id="senha" name="senha" type="password" v-model="senha" />
+    </div>
     <label for="cep">Cep</label>
     <input id="cep" name="cep" type="text" v-model="cep" @keyup="fillCep" />
     <label for="estado">Estado</label>
@@ -45,6 +47,9 @@ export default {
       base: "usuario",
       mutation: "UPDATE_USER",
     }),
+    showDataLogin() {
+      return !this.$store.state.login;
+    },
   },
   methods: {
     fillCep() {
@@ -63,7 +68,8 @@ export default {
 </script>
 
 <style scoped>
-form {
+form,
+.user {
   display: flex;
   flex-direction: column;
   gap: 8px;

@@ -10,23 +10,33 @@
         <h1>{{ product.nome }}</h1>
         <p class="product-price">{{ product.preco | priceNumber }}</p>
         <p class="product-description">{{ product.descricao }}</p>
-        <button class="btn" v-if="product.vendido === 'false'">Comprar</button>
-        <button v-else class="btn" disabled>product Vendido</button>
+        <transition mode="out-in" v-if="product.vendido === 'false'">
+          <button class="btn" v-if="!finish" @click="finish = true">
+            Comprar
+          </button>
+          <FinalizePurchase v-else :produto="product" />
+        </transition>
+        <button v-else class="btn" disabled>Produto Vendido</button>
       </div>
     </div>
-    <PaginaCarregando v-else />
+    <LoadingPage v-else />
   </section>
 </template>
 
 <script>
 import { api } from "@/services.js";
+import FinalizePurchase from "@/components/FinalizePurchase.vue";
 
 export default {
   name: "ProductView",
   props: ["id"],
+  components: {
+    FinalizePurchase,
+  },
   data() {
     return {
       product: null,
+      finish: false,
     };
   },
   methods: {
@@ -71,5 +81,11 @@ export default {
 .btn {
   width: 150px;
   margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

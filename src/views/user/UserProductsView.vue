@@ -77,9 +77,9 @@ h2 {
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 32px;
-  height: 32px;
-  background: url("../../assets/remove.svg");
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/remove.svg") no-repeat center center;
   text-indent: -100px;
   overflow: hidden;
   cursor: pointer;
