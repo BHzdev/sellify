@@ -35,6 +35,7 @@ export default {
 
 .info {
   align-self: end;
+  position: relative;
 }
 
 .product-img {
