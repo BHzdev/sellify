@@ -26,10 +26,10 @@ export default {
         vendedor_id: this.produto.usuario_id,
         produto: this.produto,
         endereco: {
+          cep: this.usuario.cep,
           estado: this.usuario.estado,
           cidade: this.usuario.cidade,
           bairro: this.usuario.bairro,
-          cep: this.usuario.cep,
           rua: this.usuario.rua,
           numero: this.usuario.numero,
         },
