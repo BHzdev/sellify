@@ -78,6 +78,7 @@ export default new Vuex.Store({
         rua: "",
         numero: "",
       });
+      window.localStorage.removeItem("token");
       context.commit("UPDATE_LOGIN", false);
     },
   },

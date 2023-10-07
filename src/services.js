@@ -31,7 +31,7 @@ export const api = {
     return axios.post("http://localhost:10005/wp-json/jwt-auth/v1/token", body);
   },
   validateToken() {
-    return axios.post(
+    return axiosInstance.post(
       "http://localhost:10005/wp-json/jwt-auth/v1/token/validate"
     );
   },
