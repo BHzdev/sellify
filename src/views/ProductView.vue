@@ -78,6 +78,11 @@ export default {
   font-size: 1.25rem;
 }
 
+img {
+  margin-bottom: 32px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
 .btn {
   width: 150px;
   margin-top: 8px;
