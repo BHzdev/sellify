@@ -38,8 +38,8 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    getUser(context, payload) {
-      return api.get(`/usuario/${payload}`).then((response) => {
+    getUser(context) {
+      return api.get(`/usuario`).then((response) => {
         context.commit("UPDATE_USER", response.data);
         context.commit("UPDATE_LOGIN", true);
       });
@@ -54,6 +54,16 @@ export default new Vuex.Store({
     createUser(context, payload) {
       context.commit("UPDATE_USER", { id: payload.email });
       return api.post("/usuario", payload);
+    },
+    loginUser(context, payload) {
+      return api
+        .login({
+          username: payload.email,
+          password: payload.senha,
+        })
+        .then((response) => {
+          window.localStorage.token = `Bearer ${response.data.token}`;
+        });
     },
     logOutUser(context) {
       context.commit("UPDATE_USER", {
