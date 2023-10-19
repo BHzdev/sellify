@@ -57,10 +57,12 @@ export default {
   methods: {
     getProducts() {
       this.products = null;
-      api.get(this.url).then((response) => {
-        this.productsTotal = Number(response.headers["x-total-count"]);
-        this.products = response.data;
-      });
+      setTimeout(() => {
+        api.get(this.url).then((response) => {
+          this.productsTotal = Number(response.headers["x-total-count"]);
+          this.products = response.data;
+        });
+      }, 500);
     },
     limitCharacters(description, limit) {
       if (description.length <= limit) return description;

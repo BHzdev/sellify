@@ -53,4 +53,14 @@ export default {
 .title {
   font-size: 1.5rem;
 }
+
+@media (max-width: 500px) {
+  .product {
+    display: flex;
+    flex-direction: column;
+  }
+  .info {
+    align-self: start;
+  }
+}
 </style>

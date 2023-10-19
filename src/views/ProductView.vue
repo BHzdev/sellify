@@ -80,7 +80,7 @@ export default {
 
 img {
   margin-bottom: 32px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn {
@@ -88,9 +88,12 @@ img {
   margin-top: 8px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 500px) {
   .product {
     grid-template-columns: 1fr;
+  }
+  .product-photo {
+    grid-row: 2;
   }
 }
 </style>

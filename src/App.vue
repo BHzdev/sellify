@@ -107,6 +107,7 @@ textarea {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
   font-size: 1rem;
+  width: 100%;
 }
 
 input:hover,

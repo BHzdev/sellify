@@ -45,7 +45,7 @@ export default {
 .sidenav a,
 .sidenav button {
   padding: 16px;
-  display: block;
+  display: flex;
   background: #f4f4f4;
   margin-bottom: 16px;
   border-radius: 4px;
@@ -67,9 +67,10 @@ export default {
   cursor: pointer;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 728px) {
   .user {
     grid-template-columns: 1fr;
+    margin: 0 auto;
   }
 }
 </style>

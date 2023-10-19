@@ -76,4 +76,13 @@ h3 {
   margin: 0;
   justify-self: end;
 }
+
+@media (max-width: 500px) {
+  .delivery {
+    grid-template-columns: 1fr;
+  }
+  .delivery h3 {
+    justify-self: start;
+  }
+}
 </style>
