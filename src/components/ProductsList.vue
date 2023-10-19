@@ -11,7 +11,9 @@
             />
             <h2 class="product-name">{{ product.nome }}</h2>
             <p class="product-price">{{ product.preco | priceNumber }}</p>
-            <p class="product-desc">{{ product.descricao }}</p>
+            <p class="product-desc">
+              {{ limitCharacters(product.descricao, 100) }}
+            </p>
           </router-link>
         </div>
         <ProductsPage
@@ -55,12 +57,14 @@ export default {
   methods: {
     getProducts() {
       this.products = null;
-      setTimeout(() => {
-        api.get(this.url).then((response) => {
-          this.productsTotal = Number(response.headers["x-total-count"]);
-          this.products = response.data;
-        });
-      }, 1500);
+      api.get(this.url).then((response) => {
+        this.productsTotal = Number(response.headers["x-total-count"]);
+        this.products = response.data;
+      });
+    },
+    limitCharacters(description, limit) {
+      if (description.length <= limit) return description;
+      return description.slice(0, limit) + "...";
     },
   },
   watch: {
@@ -103,9 +107,11 @@ export default {
 }
 
 .product img {
+  margin: 0 auto;
   border-radius: 4px;
   margin-bottom: 16px;
   max-width: 100%;
+  max-height: 300px;
 }
 
 .product-name {

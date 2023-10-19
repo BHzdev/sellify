@@ -6,7 +6,7 @@
     <transition-group v-if="usuario_produtos" name="list" tag="ul">
       <li v-for="(product, index) in usuario_produtos" :key="index">
         <ProductItem :product="product">
-          <p>{{ product.descricao }}</p>
+          <p>{{ limitCharacters(product.descricao, 100) }}</p>
           <button class="delete" @click="delectProduct(product.id)">
             Deletar
           </button>
@@ -42,6 +42,10 @@ export default {
           this.getUserProducts();
         });
       }
+    },
+    limitCharacters(description, limit) {
+      if (description.length <= limit) return description;
+      return description.slice(0, limit) + "...";
     },
   },
   watch: {

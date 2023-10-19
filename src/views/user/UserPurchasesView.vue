@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     getPurchases() {
-      api.get(`/transacao?tipo=comprador_id`).then((response) => {
+      api.get(`/transacao`).then((response) => {
         this.purchases = response.data;
       });
     },
