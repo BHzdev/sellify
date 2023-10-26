@@ -46,6 +46,7 @@ export default {
     if (this.login) {
       this.getPurchases();
     }
+    document.title = "Usuário | Compras";
   },
 };
 </script>

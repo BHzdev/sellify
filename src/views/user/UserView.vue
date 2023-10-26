@@ -23,6 +23,9 @@
 <script>
 export default {
   name: "UserView",
+  created() {
+    document.title = "Usuário";
+  },
   methods: {
     logOut() {
       this.$store.dispatch("logOutUser");

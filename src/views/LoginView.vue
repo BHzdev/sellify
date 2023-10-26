@@ -27,6 +27,9 @@ export default {
   components: {
     LoginCreate,
   },
+  created() {
+    document.title = "Login";
+  },
   data() {
     return {
       login: {
