@@ -3,6 +3,7 @@
     <h2>Endereço de Envio</h2>
     <UserForm>
       <button class="btn" @click.prevent="finalizePurchase">Comprar</button>
+      <ErrorNotification :errors="errors" />
     </UserForm>
   </section>
 </template>
@@ -18,6 +19,11 @@ export default {
     UserForm,
   },
   props: ["produto"],
+  data() {
+    return {
+      errors: [],
+    };
+  },
   computed: {
     ...mapState(["usuario"]),
     purchase() {
@@ -49,10 +55,11 @@ export default {
         await this.$store.dispatch("getUser");
         await this.createTransaction();
       } catch (error) {
-        console.log(error);
+        this.errors.push(error.response.data.message);
       }
     },
     finalizePurchase() {
+      this.errors = [];
       if (this.$store.state.login) {
         this.createTransaction();
       } else {

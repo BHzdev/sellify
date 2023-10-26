@@ -9,6 +9,7 @@
         <button class="btn" @click.prevent="createUser">
           Cadastrar Usuário
         </button>
+        <ErrorNotification :errors="errors" />
       </UserForm>
     </transition>
   </section>
@@ -25,17 +26,19 @@ export default {
   data() {
     return {
       criar: false,
+      errors: [],
     };
   },
   methods: {
     async createUser() {
+      this.errors = [];
       try {
         await this.$store.dispatch("createUser", this.$store.state.usuario);
         await this.$store.dispatch("loginUser", this.$store.state.usuario);
         await this.$store.dispatch("getUser");
         this.$router.push({ name: "usuario" });
       } catch (error) {
-        console.log(error);
+        this.errors.push(error.response.data.message);
       }
     },
   },

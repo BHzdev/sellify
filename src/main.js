@@ -3,10 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import LoadingPage from "./components/LoadingPage.vue";
+import ErrorNotification from "./components/ErrorNotification.vue";
 
 Vue.config.productionTip = false;
 
 Vue.component("LoadingPage", LoadingPage);
+Vue.component("ErrorNotification", ErrorNotification);
 
 Vue.filter("priceNumber", (value) => {
   value = Number(value);
