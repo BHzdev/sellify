@@ -1,6 +1,10 @@
 <template>
   <section>
     <h2>Cadastre-se</h2>
+    <p>
+      Ao criar uma conta você concorda com todos os nossos
+      <span>termos e condições</span>.
+    </p>
     <transition mode="out-in">
       <button v-if="!criar" class="btn" @click="criar = true">
         Criar Conta
@@ -51,6 +55,21 @@ h2 {
   text-align: center;
   color: #833cdd;
   margin: 40px 0 20px 0;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #666;
+}
+
+p span {
+  color: blue;
+  text-decoration: underline;
+}
+
+p span:hover {
+  cursor: pointer;
 }
 
 .btn {
