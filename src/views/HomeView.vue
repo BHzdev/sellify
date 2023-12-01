@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>👉 SELLIFY: Conectando Ofertas e Demandas 👈</h1>
+    <h1 ref="title">SELLIFY: Conectando Ofertas e Demandas</h1>
     <ProductsSearch />
     <ProductsList />
   </section>
@@ -16,6 +16,19 @@ export default {
     ProductsSearch,
     ProductsList,
   },
+  mounted() {
+    const title = this.$refs.title;
+    this.typeWriter(title);
+  },
+  methods: {
+    typeWriter(element) {
+      const textArray = element.innerHTML.split("");
+      element.innerHTML = "";
+      textArray.forEach((letter, i) => {
+        setTimeout(() => (element.innerHTML += letter), 75 * i);
+      });
+    },
+  },
 };
 </script>
 
@@ -25,6 +38,24 @@ h1 {
   color: #833cdd;
   margin-top: 40px;
   text-align: center;
+}
+
+h1::after {
+  content: "|";
+  opacity: 1;
+  margin-left: 5px;
+  display: inline-block;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 780px) {
