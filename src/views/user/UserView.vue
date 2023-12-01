@@ -2,16 +2,47 @@
   <section class="user">
     <nav class="sidenav">
       <ul>
-        <li><router-link :to="{ name: 'usuario' }">Produtos</router-link></li>
+        <li>
+          <router-link :to="{ name: 'usuario' }"
+            ><img
+              width="24"
+              height="24"
+              src="@/assets/products.svg"
+              alt=""
+            />Produtos</router-link
+          >
+        </li>
       </ul>
       <ul>
-        <li><router-link :to="{ name: 'compras' }">Compras</router-link></li>
+        <li>
+          <router-link :to="{ name: 'compras' }"
+            ><img
+              width="24"
+              height="24"
+              src="@/assets/buy.svg"
+              alt=""
+            />Compras</router-link
+          >
+        </li>
       </ul>
       <ul>
-        <li><router-link :to="{ name: 'vendas' }">Vendas</router-link></li>
+        <li>
+          <router-link :to="{ name: 'vendas' }"
+            ><img
+              width="24"
+              height="24"
+              src="@/assets/sell.svg"
+              alt=""
+            />Vendas</router-link
+          >
+        </li>
       </ul>
       <ul>
-        <li><button @click.prevent="logOut">Sair</button></li>
+        <li>
+          <button @click.prevent="logOut">
+            <img width="24" height="24" src="@/assets/logout.svg" alt="" />Sair
+          </button>
+        </li>
       </ul>
     </nav>
     <transition mode="out-in">
@@ -38,18 +69,25 @@ export default {
 <style scoped>
 .user {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 250px 1fr;
   max-width: 900px;
   margin: 20px auto;
   gap: 20px;
   padding: 20px;
 }
 
+.sidenav {
+  padding: 20px;
+  border-right: 2px solid #e0e0e0;
+}
+
 .sidenav a,
 .sidenav button {
   padding: 16px;
   display: flex;
-  background: #f4f4f4;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
   border-radius: 4px;
 }
@@ -68,12 +106,18 @@ export default {
   font-family: "Inter", sans-serif;
   text-align: left;
   cursor: pointer;
+  background: white;
 }
 
 @media screen and (max-width: 728px) {
   .user {
     grid-template-columns: 1fr;
     margin: 0 auto;
+  }
+  .sidenav {
+    padding: 16px;
+    border-right: none;
+    border-bottom: 2px solid #e0e0e0;
   }
 }
 </style>
