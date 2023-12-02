@@ -4,7 +4,7 @@
     <input id="nome" name="nome" type="text" v-model="produto.nome" />
     <label for="preco">Preço</label>
     <input id="preco" name="preco" type="number" v-model="produto.preco" />
-    <label for="fotos">Fotos</label>
+    <label for="fotos">Fotos (min: 200x200)</label>
     <input id="fotos" name="fotos" type="file" ref="fotos" multiple />
     <label for="preco">Descrição</label>
     <textarea id="preco" name="preco" v-model="produto.descricao"></textarea>

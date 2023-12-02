@@ -78,7 +78,7 @@ export default {
 
 .sidenav {
   padding: 20px;
-  border-right: 2px solid #e0e0e0;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .sidenav a,
@@ -87,7 +87,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
   border-radius: 4px;
 }

@@ -16,6 +16,9 @@ export default {
     ProductsSearch,
     ProductsList,
   },
+  created() {
+    document.title = "Sellify";
+  },
   mounted() {
     const title = this.$refs.title;
     this.typeWriter(title);

@@ -2,7 +2,12 @@
   <section>
     <div v-if="product" class="product">
       <ul class="product-photo" v-if="product.fotos">
-        <li v-for="(foto, index) in product.fotos" :key="index">
+        <li
+          v-for="(foto, index) in product.fotos"
+          :key="index"
+          @click="changeFirstChild(index)"
+          :class="{ 'first-child': index === selectedImageIndex }"
+        >
           <img :src="foto.src" :alt="foto.titulo" />
         </li>
       </ul>
@@ -37,6 +42,7 @@ export default {
     return {
       product: null,
       finish: false,
+      selectedImageIndex: 0,
     };
   },
   methods: {
@@ -45,6 +51,9 @@ export default {
         this.product = response.data;
         document.title = this.product.nome;
       });
+    },
+    changeFirstChild(index) {
+      this.selectedImageIndex = index;
     },
   },
   created() {
@@ -69,6 +78,23 @@ export default {
   gap: 16px;
 }
 
+.product-photo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-photo li {
+  flex: 1;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.product-photo li.first-child {
+  min-width: 100%;
+  order: -1;
+}
+
 .product-price {
   color: #0da51d;
   font-weight: bold;
@@ -80,7 +106,6 @@ export default {
 }
 
 img {
-  margin-bottom: 32px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
